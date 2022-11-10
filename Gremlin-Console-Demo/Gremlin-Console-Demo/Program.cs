@@ -43,7 +43,7 @@ namespace GremlinConsoleDemo
             { "Load talks", DataLoadQueries.Talks },
             { "Load edges (relationships)", DataLoadQueries.Edges },
             { "Load talks with topics edges", DataLoadQueries.TalksWithTopics },
-            { "Get the dotnetconf vertex", new GremlinQuery[] { DataQueries.GetDotNetConf } },
+            { "Get You!", new GremlinQuery[] { DataQueries.GetYou } },
             { "Get the vertex count", new GremlinQuery[]{DataQueries.GetVertexCount} },
             { "Get the edge count", new GremlinQuery[]{DataQueries.GetEdgeCount} },
             { "Get vertex labels", new GremlinQuery[]{DataQueries.GetVertexLabels } },

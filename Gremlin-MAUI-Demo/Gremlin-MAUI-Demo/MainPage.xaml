@@ -77,7 +77,7 @@
             <Button x:Name="btnClearData" Grid.Row="1" Grid.Column="4" Style="{StaticResource DangerButton}" Text="Clear Data" Clicked="btnClearData_Clicked" />
             <HorizontalStackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" Margin="20">
                 <Label Text="More Details:" VerticalTextAlignment="Center"  WidthRequest="150" />
-                <Button x:Name="btnGetDotnetConf" Text="Get .NET Conf Node" Clicked="btnGetDotnetConf_Clicked"/>
+                <Button x:Name="btnGetYou" Text="Get You!!" Clicked="btnGetYou_Clicked"/>
                 <Button x:Name="btnGet2Talks" Text="Get 2 Talks" Clicked="btnGet2Talks_Clicked" />
                 <Button x:Name="btnTalksWithTopics" Text="Get Talks with Topics" Clicked="btnTalksWithTopics_Clicked" />
                 <Button x:Name="btnGetTalkCountsByDuration" Text="Get Talk Counts by Duration" Clicked="btnGetTalkCountsByDuration_Clicked" />

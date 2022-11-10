@@ -46,10 +46,10 @@ public partial class MainPage : ContentPage
         ToggleUIOnButtonChange();
     }
 
-    private void btnGetDotnetConf_Clicked(object sender, EventArgs e)
+    private void btnGetYou_Clicked(object sender, EventArgs e)
     {
-        txtQuery.Text = GremlinQueryHelper.QueryToString(DataQueries.GetDotNetConf);
-        txtSelectedQuery.Text = "get dotnet conf";
+        txtQuery.Text = GremlinQueryHelper.QueryToString(DataQueries.GetYou);
+        txtSelectedQuery.Text = "get you";
         ToggleUIOnButtonChange();
     }
 
@@ -108,8 +108,8 @@ public partial class MainPage : ContentPage
             case "edge count":
                 result = GremlinQueryExecutor.ExecuteParameterizedQuery(DataQueries.GetEdgeCount);
                 break;
-            case "get dotnet conf":
-                result = GremlinQueryExecutor.ExecuteParameterizedQuery(DataQueries.GetDotNetConf);
+            case "get you":
+                result = GremlinQueryExecutor.ExecuteParameterizedQuery(DataQueries.GetYou);
                 break;
             case "vertex labels":
                 result = GremlinQueryExecutor.ExecuteParameterizedQuery(DataQueries.GetVertexLabels);

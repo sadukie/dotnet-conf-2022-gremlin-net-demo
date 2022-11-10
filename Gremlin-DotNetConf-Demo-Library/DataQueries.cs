@@ -9,6 +9,7 @@ namespace GremlinDataLayer
         private static GraphTraversalSource g => AnonymousTraversalSource.Traversal();
 
         public static GremlinQuery GetDotNetConf = g.V().Has("id", "dotnetconf").ToGremlinQuery();
+        public static GremlinQuery GetYou = g.V().Has("id", "you").ToGremlinQuery();
         public static GremlinQuery GetVertexCount = g.V().Count().ToGremlinQuery();
         public static GremlinQuery GetEdgeCount = g.E().Count().ToGremlinQuery();
         public static GremlinQuery GetVertexLabels = g.V().Label().Dedup().ToGremlinQuery();

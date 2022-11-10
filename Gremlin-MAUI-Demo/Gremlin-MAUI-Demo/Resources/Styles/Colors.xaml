@@ -9,8 +9,6 @@
     <Color x:Key="Tertiary">#2B0B98</Color>
     <Color x:Key="White">White</Color>
     <Color x:Key="Black">Black</Color>
-    <Color x:Key="DarkPurple">#512BD4</Color>
-    <Color x:Key="LightPurple">#B9AAEE</Color>
     <Color x:Key="Gray100">#E1E1E1</Color>
     <Color x:Key="Gray200">#C8C8C8</Color>
     <Color x:Key="Gray300">#ACACAC</Color>
@@ -32,8 +30,6 @@
     <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
-    <SolidColorBrush x:Key="DarkPurpleBrush" Color="{StaticResource DarkPurple}" />
-    <SolidColorBrush x:Key="LightPurpleBrush" Color="{StaticResource LightPurple}" />
     <Color x:Key="Yellow100Accent">#F7B548</Color>
     <Color x:Key="Yellow200Accent">#FFD590</Color>
     <Color x:Key="Yellow300Accent">#FFE5B9</Color>

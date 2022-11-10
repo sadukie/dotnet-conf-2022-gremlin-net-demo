@@ -3,107 +3,128 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             x:Class="Gremlin_MAUI_Demo.MainPage">
     <ContentPage.Resources>
+        <Color x:Key="DarkPurple">#512BD4</Color>
+        <Color x:Key="LightPurple">#B9AAEE</Color>
         <Style TargetType="Button" x:Key="DangerButton">
             <Setter Property="BackgroundColor" Value="DarkRed"></Setter>
             <Setter Property="TextColor" Value="White"></Setter>
-            <Setter Property="FontSize" Value="{StaticResource StandardFontSize}"/>
+            <Setter Property="FontSize" Value="20"/>
             <Setter Property="Padding" Value="20,5"/>
         </Style>
         <Style TargetType="Button" x:Key="DarkButton">
             <Setter Property="BackgroundColor" Value="{StaticResource DarkPurple}"/>
             <Setter Property="TextColor" Value="White" />
-            <Setter Property="FontSize" Value="{StaticResource StandardFontSize}"/>
+            <Setter Property="FontSize" Value="20"/>
             <Setter Property="Margin" Value="10" />
             <Setter Property="Padding" Value="20,5"/>
         </Style>
         <!-- Classed labels -->
         <Style TargetType="Label" x:Key="Header">
-            <Setter Property="FontSize" Value="{StaticResource LargeFontSize}"/>
+            <Setter Property="FontSize" Value="40"/>
             <Setter Property="TextColor" Value="{StaticResource DarkPurple}" />
+        </Style>
+        <!-- Classed buttons -->
+        <Style TargetType="Button" x:Key="LoadingButton">
+            <Setter Property="BackgroundColor" Value="{StaticResource LightPurple}"/>
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Padding" Value="20,5"/>
         </Style>
     </ContentPage.Resources>
     <ScrollView>
-        <Grid Style="{StaticResource MainGrid}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="600"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"></ColumnDefinition>
-                <ColumnDefinition Width="250"></ColumnDefinition>
-                <ColumnDefinition Width="250"></ColumnDefinition>
-                <ColumnDefinition Width="250"></ColumnDefinition>
-                <ColumnDefinition Width="250"></ColumnDefinition>
-                <ColumnDefinition Width="250"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+        <VerticalStackLayout>
+            <Image Source="intro_graph.png" HeightRequest="365" WidthRequest="395"></Image>
+            <Grid Style="{StaticResource MainGrid}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="0"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="600"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
 
-            <Label Style="{StaticResource Header}"
+                <Label Style="{StaticResource Header}"
                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" 
                Text="Gremlin Queries Demo"
                SemanticProperties.HeadingLevel="Level1"
                SemanticProperties.Description="Welcome to the .NET Conf Gremlin Queries Demo"               
                 />
-            <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Margin="20">
-                <Label Text="Basics:" VerticalTextAlignment="Center" WidthRequest="150" />
-                <Button
+                <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Margin="20">
+                    <Label Text="Basics:" VerticalTextAlignment="Center" WidthRequest="150" FontSize="20" />
+                    <Button
                x:Name="btnGetVertexCount"
                Text="Get Vertex Count"
                SemanticProperties.Hint="Gets the number of vertexes in the graph"
-               Clicked="btnGetVertexCount_Clicked"
+               Clicked="btnGetVertexCount_Clicked" FontSize="20"
                 />
-                <Button
+                    <Button
                x:Name="btnGetVertexLabels"
                Text="Get Vertex Labels"
                SemanticProperties.Hint="Gets the unique labels of vertexes in the graph"
-               Clicked="btnGetVertexLabels_Clicked"
+               Clicked="btnGetVertexLabels_Clicked" FontSize="20"
                 />
-                <Button
+                    <Button
                x:Name="btnGetEdgeCount"
                Text="Get Edge Count"
                SemanticProperties.Hint="Gets the number of edges in the graph"
-               Clicked="btnGetEdgeCount_Clicked"
+               Clicked="btnGetEdgeCount_Clicked" FontSize="20"
                 />
-                <Button
+                    <Button
                x:Name="btnGetEdgeLabels"
                Text="Get Edge Labels"
                SemanticProperties.Hint="Gets the unique labels of edges in the graph"
-               Clicked="btnGetEdgeLabels_Clicked"
+               Clicked="btnGetEdgeLabels_Clicked" FontSize="20"
                 />
-            </HorizontalStackLayout>
-            <Button x:Name="btnClearData" Grid.Row="1" Grid.Column="4" Style="{StaticResource DangerButton}" Text="Clear Data" Clicked="btnClearData_Clicked" />
-            <HorizontalStackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" Margin="20">
-                <Label Text="More Details:" VerticalTextAlignment="Center"  WidthRequest="150" />
-                <Button x:Name="btnGetYou" Text="Get You!!" Clicked="btnGetYou_Clicked"/>
-                <Button x:Name="btnGet2Talks" Text="Get 2 Talks" Clicked="btnGet2Talks_Clicked" />
-                <Button x:Name="btnTalksWithTopics" Text="Get Talks with Topics" Clicked="btnTalksWithTopics_Clicked" />
-                <Button x:Name="btnGetTalkCountsByDuration" Text="Get Talk Counts by Duration" Clicked="btnGetTalkCountsByDuration_Clicked" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="6" Margin="10">
-                <Label Text="Load Data:" VerticalTextAlignment="Center"  WidthRequest="150" />
-                <Button x:Name="btnLoadNonTalks" Style="{StaticResource LoadingButton}" Text="Load NonTalks" Clicked="btnLoadNonTalks_Clicked"/>
-                <Button x:Name="btnLoadTalks" Style="{StaticResource LoadingButton}" Text="Load Talks" Clicked="btnLoadTalks_Clicked"/>
-                <Button x:Name="btnLoadEdges" Style="{StaticResource LoadingButton}" Text="Load Edges" Clicked="btnLoadEdges_Clicked"/>
-                <Button x:Name="btnLoadTalksWithTopics" Style="{StaticResource LoadingButton}" Text="Load Talks with Topics" Clicked="btnLoadTalksWithTopics_Clicked"/>
-            </HorizontalStackLayout>
-            <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="600"/>
-                    <ColumnDefinition Width="600"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="300"/>
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Editor x:Name="txtQuery" Grid.Row="0" Grid.Column="0" HeightRequest="300" WidthRequest="613" IsReadOnly="True" Placeholder="Query Text" />
-                <Editor x:Name="txtResponse" Grid.Row="0" Grid.Column="1" HeightRequest="300" WidthRequest="455" IsReadOnly="True" Placeholder="Response Text"/>
-                <Label x:Name="txtSelectedQuery" IsVisible="False" Grid.Row="1" Grid.Column="0" Text="Selected Query" />
-                <Button x:Name="btnExecuteQuery" Grid.Row="1" Grid.Column="0" Text="Execute Query" Clicked="btnExecuteQuery_Clicked"/>
+                </HorizontalStackLayout>
+                <Button x:Name="btnClearData" Grid.Row="1" Grid.Column="4" Style="{StaticResource DangerButton}" Text="Clear Data" Clicked="btnClearData_Clicked" />
+                <HorizontalStackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" Margin="20" >
+                    <Label Text="More Details:" VerticalTextAlignment="Center"  WidthRequest="150" FontSize="20" />
+                    <Button x:Name="btnGetYou" Text="Get You!!" Clicked="btnGetYou_Clicked" FontSize="20" SemanticProperties.Hint="Gets the You vertext" />
+                    <Button x:Name="btnGetYourEdges" Text="Get Your Edges" Clicked="btnGetYourEdges_Clicked" FontSize="20" SemanticProperties.Hint="Gets the edges for the You vertex" />
+                    <Button x:Name="btnGetDataTalks" Text="Get Data Talks" Clicked="btnGetDataTalks_Clicked" FontSize="20" SemanticProperties.Hint="Gets the vertexes of the talks tied to the Topic vertex named Data" />
+                    <Button x:Name="btnGetDataTalksNames" Text="Get Data Talks Names" Clicked="btnGetDataTalksNames_Clicked" FontSize="20" SemanticProperties.Hint="Gets just the names of the talks tied to the Topic vertex named Data" />
+                    <Button x:Name="btnGetYouToDataTalks" Text="Get You to Data Talks" Clicked="btnGetYouToDataTalks_Clicked" FontSize="20" SemanticProperties.Hint="Goes from the You vertex to the data talks" />
+                    <Button x:Name="btnGetYouToDataTalksPath" Text="Get You to Data Talks (Path)" Clicked="btnGetYouToDataTalksPath_Clicked" FontSize="20" SemanticProperties.Hint="Gets the path from the You vertex to the data talks" />
+                    <Button x:Name="btnGetDataAllEdges" Text="Get All Edges for Data" Clicked="btnGetDataAllEdges_Clicked" FontSize="20" SemanticProperties.Hint="Gets all edges for the Data vertex" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="6" Margin="10">
+                    <Button x:Name="btnGet2Talks" Text="Get 2 Talks" Clicked="btnGet2Talks_Clicked" FontSize="20" SemanticProperties.Hint="Gets 2 Talk vertexes" />
+                    <Button x:Name="btnGetTalkCountsByDuration" Text="Get Talk Counts by Duration" Clicked="btnGetTalkCountsByDuration_Clicked" FontSize="20" SemanticProperties.Hint="Gets the number of counts grouped by duration" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6" Margin="10">
+                    <Label Text="Load Data:" VerticalTextAlignment="Center"  WidthRequest="150" FontSize="20" />
+                    <Button x:Name="btnLoadNonTalks" Style="{StaticResource LoadingButton}" Text="Load NonTalks" Clicked="btnLoadNonTalks_Clicked" FontSize="20" SemanticProperties.Hint="Gets the queries for loading vertexes that aren't labeled 'Talk'" />
+                    <Button x:Name="btnLoadTalks" Style="{StaticResource LoadingButton}" Text="Load Talks" Clicked="btnLoadTalks_Clicked" FontSize="20" SemanticProperties.Hint="Gets the queries for loading vertexes that are labeled 'Talk'" />
+                    <Button x:Name="btnLoadEdges" Style="{StaticResource LoadingButton}" Text="Load Edges" Clicked="btnLoadEdges_Clicked" FontSize="20" SemanticProperties.Hint="Gets the queries for loading edges not related to the talks and topics" />
+                    <Button x:Name="btnLoadTalksWithTopics" Style="{StaticResource LoadingButton}" Text="Load Talks with Topics" Clicked="btnLoadTalksWithTopics_Clicked" FontSize="20" SemanticProperties.Hint="Gets the queries for the edges between talks and topics vertexes" />
+                </HorizontalStackLayout>
+                <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="600"/>
+                        <ColumnDefinition Width="600"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="300"/>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Editor x:Name="txtQuery" FontSize="20" Grid.Row="0" Grid.Column="0" HeightRequest="300" WidthRequest="613" IsReadOnly="True" Placeholder="Query Text" />
+                    <Editor x:Name="txtResponse" FontSize="20" Grid.Row="0" Grid.Column="1" HeightRequest="300" WidthRequest="455" IsReadOnly="True" Placeholder="Response Text"/>
+                    <Label x:Name="txtSelectedQuery" FontSize="20" IsVisible="False" Grid.Row="1" Grid.Column="0" Text="Selected Query" />
+                    <Button x:Name="btnExecuteQuery" FontSize="20" Grid.Row="1" Grid.Column="0" Text="Execute Query" Clicked="btnExecuteQuery_Clicked" SemanticProperties.Hint="Runs the query loaded in the query editor"/>
+                </Grid>
             </Grid>
-        </Grid>
+        </VerticalStackLayout>
     </ScrollView>
 
 </ContentPage>

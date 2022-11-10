@@ -120,11 +120,26 @@ public partial class MainPage : ContentPage
             case "get 2 talks":
                 result = GremlinQueryExecutor.ExecuteParameterizedQuery(DataQueries.Get2Talks);
                 break;
-            case "get talks with topics":
-                result = GremlinQueryExecutor.ExecuteParameterizedQuery(DataQueries.GetTalksByTopic);
-                break;
             case "get talk counts by duration":
                 result = GremlinQueryExecutor.ExecuteParameterizedQuery(DataQueries.GetCountsOfTalksByDuration);
+                break;
+            case "get your edges":
+                result = GremlinQueryExecutor.ExecuteParameterizedQuery(DataQueries.GetYourEdges);
+                break;
+            case "get data talks":
+                result = GremlinQueryExecutor.ExecuteParameterizedQuery(DataQueries.GetDataTalks);
+                break;
+            case "get data talk names":
+                result = GremlinQueryExecutor.ExecuteParameterizedQuery(DataQueries.GetDataTalkNames);
+                break;
+            case "get you to data talks":
+                result = GremlinQueryExecutor.ExecuteParameterizedQuery(DataQueries.GetYouToDataTalks);
+                break;
+            case "get you to data talks path":
+                result = GremlinQueryExecutor.ExecuteParameterizedQuery(DataQueries.GetYouToDataTalksPath);
+                break;
+            case "get all data edges":
+                result = GremlinQueryExecutor.ExecuteParameterizedQuery(DataQueries.GetDataAllEdges);
                 break;
             default:
                 break;
@@ -145,17 +160,52 @@ public partial class MainPage : ContentPage
         ToggleUIOnButtonChange();
     }
 
-    private void btnTalksWithTopics_Clicked(object sender, EventArgs e)
-    {
-        txtQuery.Text = DataQueries.GetTalksByTopic;
-        txtSelectedQuery.Text = "get talks with topics";
-        ToggleUIOnButtonChange();
-    }
-
     private void btnGetTalkCountsByDuration_Clicked(object sender, EventArgs e)
     {
         txtQuery.Text = DataQueries.GetCountsOfTalksByDuration;
         txtSelectedQuery.Text = "get talk counts by duration";
+        ToggleUIOnButtonChange();
+    }
+
+    private void btnGetYourEdges_Clicked(object sender, EventArgs e)
+    {
+        txtQuery.Text = GremlinQueryHelper.QueryToString(DataQueries.GetYourEdges);
+        txtSelectedQuery.Text = "get your edges";
+        ToggleUIOnButtonChange();
+    }
+
+    private void btnGetDataTalks_Clicked(object sender, EventArgs e)
+    {
+        txtQuery.Text = GremlinQueryHelper.QueryToString(DataQueries.GetDataTalks);
+        txtSelectedQuery.Text = "get data talks";
+        ToggleUIOnButtonChange();
+    }
+
+    private void btnGetDataTalksNames_Clicked(object sender, EventArgs e)
+    {
+        txtQuery.Text = GremlinQueryHelper.QueryToString(DataQueries.GetDataTalkNames);
+        txtSelectedQuery.Text = "get data talk names";
+        ToggleUIOnButtonChange();
+    }
+
+    private void btnGetYouToDataTalks_Clicked(object sender, EventArgs e)
+    {
+        txtQuery.Text = GremlinQueryHelper.QueryToString(DataQueries.GetYouToDataTalks);
+        txtSelectedQuery.Text = "get you to data talks";
+        ToggleUIOnButtonChange();
+    }
+
+    private void btnGetYouToDataTalksPath_Clicked(object sender, EventArgs e)
+    {
+        txtQuery.Text = GremlinQueryHelper.QueryToString(DataQueries.GetYouToDataTalksPath);
+        txtSelectedQuery.Text = "get you to data talks path";
+        ToggleUIOnButtonChange();
+    }
+
+    private void btnGetDataAllEdges_Clicked(object sender, EventArgs e)
+    {
+        txtQuery.Text = GremlinQueryHelper.QueryToString(DataQueries.GetDataAllEdges);
+        txtSelectedQuery.Text = "get all data edges";
         ToggleUIOnButtonChange();
     }
 }

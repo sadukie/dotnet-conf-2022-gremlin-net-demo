@@ -10,6 +10,12 @@ namespace GremlinDataLayer
 
         public static GremlinQuery GetDotNetConf = g.V().Has("id", "dotnetconf").ToGremlinQuery();
         public static GremlinQuery GetYou = g.V().Has("id", "you").ToGremlinQuery();
+        public static GremlinQuery GetYourEdges = g.V().Has("id", "you").OutE().ToGremlinQuery();
+        public static GremlinQuery GetDataTalks = g.V().HasLabel("Topic").Has("name","Data").OutE().InV().ToGremlinQuery();
+        public static GremlinQuery GetDataAllEdges = g.V().HasLabel("Topic").Has("name", "Data").BothE().ToGremlinQuery();
+        public static GremlinQuery GetDataTalkNames = g.V().HasLabel("Topic").Has("name", "Data").OutE().InV().Values<string>("name").ToGremlinQuery();
+        public static GremlinQuery GetYouToDataTalks = g.V().Has("id", "you").OutE().InV().Has("name","Data").OutE().InV().ToGremlinQuery();
+        public static GremlinQuery GetYouToDataTalksPath = g.V().Has("id", "you").OutE().InV().Has("name", "Data").OutE().InV().Path().ToGremlinQuery();
         public static GremlinQuery GetVertexCount = g.V().Count().ToGremlinQuery();
         public static GremlinQuery GetEdgeCount = g.E().Count().ToGremlinQuery();
         public static GremlinQuery GetVertexLabels = g.V().Label().Dedup().ToGremlinQuery();

@@ -208,5 +208,10 @@ public partial class MainPage : ContentPage
         txtSelectedQuery.Text = "get all data edges";
         ToggleUIOnButtonChange();
     }
+
+    private void btnToggleGraph_Clicked(object sender, EventArgs e)
+    {
+        imgGraph.IsVisible = !imgGraph.IsVisible;
+    }
 }
 

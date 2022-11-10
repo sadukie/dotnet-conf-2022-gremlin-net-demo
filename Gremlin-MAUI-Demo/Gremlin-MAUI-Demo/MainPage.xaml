@@ -34,7 +34,6 @@
     </ContentPage.Resources>
     <ScrollView>
         <VerticalStackLayout>
-            <Image Source="intro_graph.png" HeightRequest="365" WidthRequest="395"></Image>
             <Grid Style="{StaticResource MainGrid}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100"></RowDefinition>
@@ -55,10 +54,17 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Style="{StaticResource Header}"
-               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" 
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
                Text="Gremlin Queries Demo"
                SemanticProperties.HeadingLevel="Level1"
                SemanticProperties.Description="Welcome to the .NET Conf Gremlin Queries Demo"               
+                />
+                <Button
+               x:Name="btnToggleGraph"
+                Grid.Row="0" Grid.Column="3"
+               Text="Toggle Graph"
+               SemanticProperties.Hint="Toggles the story graph"
+               Clicked="btnToggleGraph_Clicked" FontSize="20"
                 />
                 <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Margin="20">
                     <Label Text="Basics:" VerticalTextAlignment="Center" WidthRequest="150" FontSize="20" />
@@ -124,7 +130,8 @@
                     <Button x:Name="btnExecuteQuery" FontSize="20" Grid.Row="1" Grid.Column="0" Text="Execute Query" Clicked="btnExecuteQuery_Clicked" SemanticProperties.Hint="Runs the query loaded in the query editor"/>
                 </Grid>
             </Grid>
-        </VerticalStackLayout>
+            <Image x:Name="imgGraph" Source="intro_graph.png" HeightRequest="729" WidthRequest="791" IsVisible="False"></Image>
+       </VerticalStackLayout>
     </ScrollView>
 
 </ContentPage>

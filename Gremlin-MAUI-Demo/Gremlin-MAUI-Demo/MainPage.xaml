@@ -68,52 +68,32 @@
                 />
                 <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Margin="20">
                     <Label Text="Basics:" VerticalTextAlignment="Center" WidthRequest="150" FontSize="20" />
-                    <Button
-               x:Name="btnGetVertexCount"
-               Text="Get Vertex Count"
-               SemanticProperties.Hint="Gets the number of vertexes in the graph"
-               Clicked="btnGetVertexCount_Clicked" FontSize="20"
-                />
-                    <Button
-               x:Name="btnGetVertexLabels"
-               Text="Get Vertex Labels"
-               SemanticProperties.Hint="Gets the unique labels of vertexes in the graph"
-               Clicked="btnGetVertexLabels_Clicked" FontSize="20"
-                />
-                    <Button
-               x:Name="btnGetEdgeCount"
-               Text="Get Edge Count"
-               SemanticProperties.Hint="Gets the number of edges in the graph"
-               Clicked="btnGetEdgeCount_Clicked" FontSize="20"
-                />
-                    <Button
-               x:Name="btnGetEdgeLabels"
-               Text="Get Edge Labels"
-               SemanticProperties.Hint="Gets the unique labels of edges in the graph"
-               Clicked="btnGetEdgeLabels_Clicked" FontSize="20"
-                />
+                    <Button x:Name="btnGetVertexCount" Text="Get Vertex Count" SemanticProperties.Hint="Gets the number of vertexes in the graph" Clicked="ShowParameterizedQueries" FontSize="20" />
+                    <Button x:Name="btnGetVertexLabels" Text="Get Vertex Labels" SemanticProperties.Hint="Gets the unique labels of vertexes in the graph" Clicked="ShowParameterizedQueries" FontSize="20" />
+                    <Button x:Name="btnGetEdgeCount" Text="Get Edge Count" SemanticProperties.Hint="Gets the number of edges in the graph" Clicked="ShowParameterizedQueries" FontSize="20" />
+                    <Button x:Name="btnGetEdgeLabels" Text="Get Edge Labels" SemanticProperties.Hint="Gets the unique labels of edges in the graph" Clicked="ShowParameterizedQueries" FontSize="20" />
                 </HorizontalStackLayout>
-                <Button x:Name="btnClearData" Grid.Row="1" Grid.Column="4" Style="{StaticResource DangerButton}" Text="Clear Data" Clicked="btnClearData_Clicked" />
+                <Button x:Name="btnClearData" Grid.Row="1" Grid.Column="4" Style="{StaticResource DangerButton}" Text="Clear Data" Clicked="ShowParameterizedQueries" />
                 <HorizontalStackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" Margin="20" >
                     <Label Text="More Details:" VerticalTextAlignment="Center"  WidthRequest="150" FontSize="20" />
-                    <Button x:Name="btnGetYou" Text="Get You!!" Clicked="btnGetYou_Clicked" FontSize="20" SemanticProperties.Hint="Gets the You vertext" />
-                    <Button x:Name="btnGetYourEdges" Text="Get Your Edges" Clicked="btnGetYourEdges_Clicked" FontSize="20" SemanticProperties.Hint="Gets the edges for the You vertex" />
-                    <Button x:Name="btnGetDataTalks" Text="Get Data Talks" Clicked="btnGetDataTalks_Clicked" FontSize="20" SemanticProperties.Hint="Gets the vertexes of the talks tied to the Topic vertex named Data" />
-                    <Button x:Name="btnGetDataTalksNames" Text="Get Data Talks Names" Clicked="btnGetDataTalksNames_Clicked" FontSize="20" SemanticProperties.Hint="Gets just the names of the talks tied to the Topic vertex named Data" />
-                    <Button x:Name="btnGetYouToDataTalks" Text="Get You to Data Talks" Clicked="btnGetYouToDataTalks_Clicked" FontSize="20" SemanticProperties.Hint="Goes from the You vertex to the data talks" />
-                    <Button x:Name="btnGetYouToDataTalksPath" Text="Get You to Data Talks (Path)" Clicked="btnGetYouToDataTalksPath_Clicked" FontSize="20" SemanticProperties.Hint="Gets the path from the You vertex to the data talks" />
-                    <Button x:Name="btnGetDataAllEdges" Text="Get All Edges for Data" Clicked="btnGetDataAllEdges_Clicked" FontSize="20" SemanticProperties.Hint="Gets all edges for the Data vertex" />
+                    <Button x:Name="btnGetYou" Text="Get You!" Clicked="ShowParameterizedQueries" FontSize="20" SemanticProperties.Hint="Gets the You vertext" />
+                    <Button x:Name="btnGetYourEdges" Text="Get Your Edges" Clicked="ShowParameterizedQueries" FontSize="20" SemanticProperties.Hint="Gets the edges for the You vertex" />
+                    <Button x:Name="btnGetDataTalks" Text="Get Data Talks" Clicked="ShowParameterizedQueries" FontSize="20" SemanticProperties.Hint="Gets the vertexes of the talks tied to the Topic vertex named Data" />
+                    <Button x:Name="btnGetDataTalksNames" Text="Get Data Talks Names" Clicked="ShowParameterizedQueries" FontSize="20" SemanticProperties.Hint="Gets just the names of the talks tied to the Topic vertex named Data" />
+                    <Button x:Name="btnGetYouToDataTalks" Text="Get You to Data Talks" Clicked="ShowParameterizedQueries" FontSize="20" SemanticProperties.Hint="Goes from the You vertex to the data talks" />
+                    <Button x:Name="btnGetYouToDataTalksPath" Text="Get You to Data Talks (Path)" Clicked="ShowParameterizedQueries" FontSize="20" SemanticProperties.Hint="Gets the path from the You vertex to the data talks" />
+                    <Button x:Name="btnGetDataAllEdges" Text="Get All Edges for Data" Clicked="ShowParameterizedQueries" FontSize="20" SemanticProperties.Hint="Gets all edges for the Data vertex" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="6" Margin="10">
-                    <Button x:Name="btnGet2Talks" Text="Get 2 Talks" Clicked="btnGet2Talks_Clicked" FontSize="20" SemanticProperties.Hint="Gets 2 Talk vertexes" />
-                    <Button x:Name="btnGetTalkCountsByDuration" Text="Get Talk Counts by Duration" Clicked="btnGetTalkCountsByDuration_Clicked" FontSize="20" SemanticProperties.Hint="Gets the number of counts grouped by duration" />
+                    <Button x:Name="btnGet2Talks" Text="Get 2 Talks" Clicked="ShowParameterizedQueries" FontSize="20" SemanticProperties.Hint="Gets 2 Talk vertexes" />
+                    <Button x:Name="btnGetTalkCountsByDuration" Text="Get Talk Counts by Duration" Clicked="ShowParameterizedQueries" FontSize="20" SemanticProperties.Hint="Gets the number of counts grouped by duration" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6" Margin="10">
                     <Label Text="Load Data:" VerticalTextAlignment="Center"  WidthRequest="150" FontSize="20" />
-                    <Button x:Name="btnLoadNonTalks" Style="{StaticResource LoadingButton}" Text="Load NonTalks" Clicked="btnLoadNonTalks_Clicked" FontSize="20" SemanticProperties.Hint="Gets the queries for loading vertexes that aren't labeled 'Talk'" />
-                    <Button x:Name="btnLoadTalks" Style="{StaticResource LoadingButton}" Text="Load Talks" Clicked="btnLoadTalks_Clicked" FontSize="20" SemanticProperties.Hint="Gets the queries for loading vertexes that are labeled 'Talk'" />
-                    <Button x:Name="btnLoadEdges" Style="{StaticResource LoadingButton}" Text="Load Edges" Clicked="btnLoadEdges_Clicked" FontSize="20" SemanticProperties.Hint="Gets the queries for loading edges not related to the talks and topics" />
-                    <Button x:Name="btnLoadTalksWithTopics" Style="{StaticResource LoadingButton}" Text="Load Talks with Topics" Clicked="btnLoadTalksWithTopics_Clicked" FontSize="20" SemanticProperties.Hint="Gets the queries for the edges between talks and topics vertexes" />
+                    <Button x:Name="btnLoadNonTalks" Style="{StaticResource LoadingButton}" Text="Load NonTalks" Clicked="ShowParameterizedQueries" FontSize="20" SemanticProperties.Hint="Gets the queries for loading vertexes that aren't labeled 'Talk'" />
+                    <Button x:Name="btnLoadTalks" Style="{StaticResource LoadingButton}" Text="Load Talks" Clicked="ShowParameterizedQueries" FontSize="20" SemanticProperties.Hint="Gets the queries for loading vertexes that are labeled 'Talk'" />
+                    <Button x:Name="btnLoadEdges" Style="{StaticResource LoadingButton}" Text="Load Edges" Clicked="ShowParameterizedQueries" FontSize="20" SemanticProperties.Hint="Gets the queries for loading edges not related to the talks and topics" />
+                    <Button x:Name="btnLoadTalksWithTopics" Style="{StaticResource LoadingButton}" Text="Load Talks with Topics" Clicked="ShowParameterizedQueries" FontSize="20" SemanticProperties.Hint="Gets the queries for the edges between talks and topics vertexes" />
                 </HorizontalStackLayout>
                 <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="6">
                     <Grid.ColumnDefinitions>
